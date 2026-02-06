@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tengah Full Layar</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            
+            background-color: #3498db;
+
+            display: grid;
+            place-items: center;
+
+            text-align: center;
+        }
+
+        #besar {
+            width: 280vx;
+            height: 70vw;
+            object-fit: cover;
+        }
+    
+.container {
+            position: relative;
+        }
+    
+        #kecil {
+            width: 100px;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            animation: jedagJedug 0.3s infinite;
+        }
+
+        @keyframes jedagJedug {
+            0%   { transform: translate(0, 0) scale(1); }
+            25%  { transform: translate(-5px, 5px) scale(1.05); }
+            50%  { transform: translate(5px, -5px) scale(1); }
+            75%  { transform: translate(-5px, -5px) scale(1.05); }
+            100% { transform: translate(0, 0) scale(1); }
+    </style>
+</head>
+<body>
+
+        <h1>WIFI GRATIS UNTUK SEMUA ORANG</h1>
+        <img src="clik.jpg">
+        <img src="wifi.jpg">
+        
+          <audio id="sound" loop>
+        <source src="ah.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const img = document.getElementById("img");
+        const sound = document.getElementById("sound");
+
+        document.body.addEventListener("click", () => {
+            sound.play();
+        });
+
+        setInterval(() => {
+            img.style.transform = "scale(1.2)";
+            setTimeout(() => {
+                img.style.transform = "scale(1)";
+            }, 150);
+        }, 300);
+    </script>
+
+</body>
+</html>
